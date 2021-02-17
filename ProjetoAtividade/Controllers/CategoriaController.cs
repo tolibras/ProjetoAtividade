@@ -35,7 +35,7 @@ namespace ProjetoAtividade.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: Fabricantes/Edit/5
+        // GET: Edit
         public ActionResult Edit(long? id)
         {
             if (id == null)
@@ -50,7 +50,7 @@ namespace ProjetoAtividade.Controllers
             return View(categoria);
         }
 
-        // POST: Fabricantes/Edit/5
+        // POST: Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Categoria categoria)
@@ -64,7 +64,7 @@ namespace ProjetoAtividade.Controllers
             return View(categoria);
         }
 
-        // GET: Fabricantes
+        // GET: Details
         public ActionResult Details(long? id)
         {
             if (id == null)
@@ -79,7 +79,7 @@ namespace ProjetoAtividade.Controllers
             return View(categoria);
         }
 
-        // GET: Fabricantes
+        // GET: Delete
         public ActionResult Delete(long? id)
         {
             if (id == null)
@@ -94,7 +94,7 @@ namespace ProjetoAtividade.Controllers
             return View(categoria);
         }
 
-        // POST: Fabricantes
+        // POST: Delete
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(long id)
@@ -102,6 +102,7 @@ namespace ProjetoAtividade.Controllers
             Categoria categoria = context.Categorias.Find(id);
             context.Categorias.Remove(categoria);
             context.SaveChanges();
+            TempData["Message"] = "Categoria " + categoria.Nome.ToUpper() + " foi removido";
             return RedirectToAction("Index");
         }
     }
