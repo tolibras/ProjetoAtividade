@@ -25,6 +25,8 @@
                     <li id="liHome" role="presentation" class="active"><a href="#">Home</a></li>
                     <li id="liCategorias" role="presentation">@Html.ActionLink("Categorias", "Index", "Categoria")</li>
                     <li id="liFabricantes" role="presentation">@Html.ActionLink("Fabricantes", "Index", "Fabricantes")</li>
+                    <li id="liProdutos" role="presentation">@Html.ActionLink("Produtos", "Index","Produtos")
+                </li>
                 </ul>
             </div>
             <div class="col-xs-9 col-md-9">
@@ -38,7 +40,7 @@
             </div>
         </div>
     </div>
-    <script src="@Url.Content("~/scripts/jquery-1.10.2.js")"></script>
+    <script src="@Url.Content("~/scripts/jquery-2.2.4.js")"></script>
     <script src="@Url.Content("~/scripts/bootstrap.js")"></script>
     <script type="text/javascript">
         $(document).ready(function () {
